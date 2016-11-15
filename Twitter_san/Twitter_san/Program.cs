@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreTweet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,15 @@ namespace Twitter_san
     {
         static void Main(string[] args)
         {
+            var tokens = Tokens.Create("{API key}"
+                  , "{API secret}"
+                  , "{Access token}"
+                  , "{Access token secret}");
+
+            var text = "status text";
+            tokens.Statuses.Update(new { status = text });
+
+
         }
     }
 }
