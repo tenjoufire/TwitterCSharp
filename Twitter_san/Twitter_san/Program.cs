@@ -21,13 +21,16 @@ namespace Twitter_san
 
             //Console.WriteLine(APIkey + " " + APIsecret + " " + AccessToken + " " + AccessTokenSecret); //for debug
 
+            //認証します
             var tokens = Tokens.Create(APIkey
                   , APIsecret
                   , AccessToken
                   , AccessTokenSecret);
 
+            //get Home TL
             var home = tokens.Statuses.HomeTimeline(count => 30);
 
+            //standerd output
             foreach(var tweet in home)
             {
                 Console.WriteLine("=================================================");
