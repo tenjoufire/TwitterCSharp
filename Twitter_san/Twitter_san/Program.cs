@@ -26,7 +26,18 @@ namespace Twitter_san
                   , AccessToken
                   , AccessTokenSecret);
 
-            var text = "なにやってくれてるんだよ";
+            var home = tokens.Statuses.HomeTimeline(count => 30);
+
+            foreach(var tweet in home)
+            {
+                Console.WriteLine("=================================================");
+                Console.WriteLine(tweet.User.Name + " @" + tweet.User.ScreenName);
+                Console.WriteLine(tweet.Text + "\n");
+            }
+
+
+            /*
+             var text = "YSD";
             try
             {
                 tokens.Statuses.Update(new { status = text });
@@ -35,7 +46,8 @@ namespace Twitter_san
             {
                 Debug.WriteLine("error : " + e.Message);
             }
-            
+            */
+
 
 
         }
